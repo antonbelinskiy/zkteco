@@ -1,0 +1,30 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+
+
+body {
+    font-family: "MyriadProRegular";
+}
+.header {
+  background-color: #21232E;
+  .header_inner {
+    padding: 15px 0;
+    .dropdown_menu {
+      align-self: center;
+      &-inner {
+        display: none;
+        color: #fff;
+        padding-top: 40px;
+      }
+    }
+  }
+}
+.dropdown_menu:active
+.dropdown_menu-inner {
+  display: block;
+}
+
+@import "media";
