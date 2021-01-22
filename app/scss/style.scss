@@ -224,8 +224,12 @@ button {
   position: relative;
   .slider_arrows {
     position: absolute;
+    padding: 18px;
+    border: 1px solid #fff;
+    border-radius: 50%;
     top: 42%;
     z-index: 4;
+    cursor: pointer;
   }
   .slider_arrows-left {
     transform: rotate(180deg);
