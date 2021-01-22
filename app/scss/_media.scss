@@ -1,0 +1,23 @@
+@media screen and (max-width: 1366px){
+  .container {
+    width: 1300px;
+  }
+  .header_nav {
+    menu {
+      li {
+        a {
+          font-size: 14px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+.header_contacts .tel {
+  font-size: 14px;
+  line-height: 18px;
+}
+.dropdown_menu a {
+  font-size: 16px;
+  line-height: 24px;
+}

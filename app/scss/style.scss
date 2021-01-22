@@ -219,4 +219,28 @@ button {
   }
 }
 
+.slider_inner {
+  margin: 0 auto;
+  position: relative;
+  .slider_arrows {
+    position: absolute;
+    top: 42%;
+    z-index: 4;
+  }
+  .slider_arrows-left {
+    transform: rotate(180deg);
+    left: 3%;
+  }
+  .slider_arrows-right {
+    right: 3%;
+  }
+
+}
+.slider_item {
+  height: 560px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @import "media";
