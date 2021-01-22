@@ -6,25 +6,217 @@
 
 
 body {
-    font-family: "MyriadProRegular";
+  font-family: "MyriadProRegular";
 }
+
 .header {
   background-color: #21232E;
+  min-height: 80px;
+
+
   .header_inner {
-    padding: 15px 0;
-    .dropdown_menu {
-      align-self: center;
-      &-inner {
-        display: none;
-        color: #fff;
-        padding-top: 40px;
+    display: flex;
+    align-items: center;
+
+    .header_logo {
+      margin-right: 57px;
+    }
+
+    .menu_btn {
+      margin-right: 50px;
+    }
+    #close_btn {
+      margin-right: 56px;
+    }
+  }
+}
+
+.header_nav {
+  menu {
+    li {
+      display: inline-block;
+      margin-right: 32px;
+
+      a {
+        font-size: 18px;
+        line-height: 24px;
+        transition: all .2s;
+
+        &:hover {
+          color: $green;
+        }
       }
     }
   }
 }
-.dropdown_menu:active
+
+.header_form-search form {
+  position: relative;
+  width: 170px;
+  height: 80px;
+  background-color: #333640;
+  margin-right: 30px;
+}
+
+
+.header_form-search input {
+  overflow: hidden;
+  color: #9EA1A7;
+  width: 130px;
+  height: 100%;
+  padding: 15px 0px 15px 20px;
+}
+
+.header_form-search input,
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.header_form-search button {
+  background-color: #333640;
+  position: absolute;
+  right: 4%;
+  top: 32%;
+  cursor: pointer;
+
+  path:hover {
+    background-color: $green;
+  }
+}
+
+.header_contacts .tel {
+  font-family: "MyriadProBold";
+  font-size: 18px;
+  line-height: 24px;
+  margin-right: 30px;
+  transition: all .2s;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.header_callback-btn {
+  color: $green;
+  text-align: center;
+  font-size: 14px;
+  line-height: 18px;
+  border: 1px solid $green;
+  border-radius: 4px;
+  padding: 3px;
+  margin-right: 30px;
+  width: 86px;
+  height: 44px;
+  transition: all .3s;
+
+  &:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgba($color: $green, $alpha: 1.0);
+  }
+}
+
+.header_tools {
+  display: flex;
+
+  &-weight {
+    margin-right: 30px;
+  }
+}
+
+.header_tools>* {
+  & {
+    position: relative;
+  }
+
+  &::after {
+    content: '5';
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    height: 14px;
+    width: 14px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #fff;
+    background-color: $green;
+    border-radius: 50%;
+  }
+}
+.dropdown_menu {
+  display: none;
+  background-color: #21232E;
+  padding-bottom: 60px;
+  padding-top: 10px;
+  transition: linear .3s;
+}
+.hide {
+  opacity: 0 !important;
+}
 .dropdown_menu-inner {
-  display: block;
+  display: flex;
+
+  a {
+    font-size: 18px;
+    line-height: 24px;
+    transition: all .1s;
+      &:hover {
+        color: $green;
+      }
+  }
+}
+
+.dropdown_menu-main,
+.dropdown_menu-row {
+  display: flex;
+  direction: columns;
+  flex-wrap: wrap;
+  width: 320px;
+  margin-right: 30px;
+  max-height: 500px;
+}
+
+
+
+.dropdown_list {
+  li:not(:first-child) {
+    margin-bottom: 10px;
+  }
+
+}
+
+.dropdown_list-title {
+  color: #9EA1A7;
+  font-family: "MyriadProBold";
+  font-size: 44px;
+  line-height: 44px;
+  margin-bottom: 16px;
+}
+
+.dropdown_menu-subtitle {
+  font-family: "MyriadProBold";
+  margin-bottom: 16px;
+  font-size: 20px;
+  line-height: 44px;
+  color: #9EA1A7;
+}
+
+.dropdown_added-list {
+  margin-top: 60px;
+  display: flex;
+  direction: columns;
+  flex-wrap: wrap;
+  max-width: 320px;
+  max-height: 500px;
+
+  li {
+    min-width: 100px;
+    margin-bottom: 10px;
+    margin-right: 80px;
+  }
 }
 
 @import "media";

@@ -1,11 +1,25 @@
+* {
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0%;
+}
+
+a {
+  color: #fff;
+}
 
 body {
   font-family: "MyriadPro";
+}
 
+.invisible {
+  opacity: 0;
 }
 
 .container {
-  width: 1400px;
-  padding: 0 15px;
+  padding: 0 40px;
+  width: 1360px;
   margin: 0 auto;
 }
