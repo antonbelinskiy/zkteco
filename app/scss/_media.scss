@@ -1,9 +1,22 @@
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1367px) {
   .container {
     width: 1300px;
   }
+  .menu_btn {
+    margin-right: 45px;
+  }
+  
+  .header .header_inner #close_btn {
+    margin-right: 60px;
+  }
+  .header .header_inner .header_logo {
+    height: 38px;
+    width: 180px;
+    margin-right: 31px;
+  }
   .header_nav {
     menu {
+      margin-right: 20px;
       li {
         a {
           font-size: 14px;
@@ -12,16 +25,14 @@
       }
     }
   }
-}
-.header_contacts .tel {
-  font-size: 14px;
-  line-height: 18px;
-}
-.dropdown_menu a {
-  font-size: 16px;
-  line-height: 24px;
-}
-
-@media screen and (min-width: 1601px){
-
+  .header_form-search input {
+    font-size: 18px;
+  }
+  .header_contacts .tel {
+    font-size: 18px;
+  }
+  .dropdown_menu a {
+    font-size: 16px;
+    line-height: 24px;
+  }
 }
