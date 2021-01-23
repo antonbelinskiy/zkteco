@@ -1,4 +1,4 @@
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1366px) {
   .container {
     width: 1300px;
   }
@@ -20,4 +20,8 @@
 .dropdown_menu a {
   font-size: 16px;
   line-height: 24px;
+}
+
+@media screen and (min-width: 1601px){
+
 }

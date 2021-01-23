@@ -6,6 +6,8 @@ $(function () {
         nextArrow: '<img class="slider_arrows slider_arrows-right" src="./img/arrow.svg" alt="Arrow">',
         dots: true,
         autoplay: true,
+        autoplaySpeed: 3000
+
     })
 
 

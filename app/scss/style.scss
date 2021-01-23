@@ -4,7 +4,6 @@
 @import "global";
 
 
-
 body {
   font-family: "MyriadProRegular";
 }
@@ -25,6 +24,7 @@ body {
     .menu_btn {
       margin-right: 50px;
     }
+
     #close_btn {
       margin-right: 56px;
     }
@@ -126,7 +126,7 @@ button {
   }
 }
 
-.header_tools>* {
+.header_tools > * {
   & {
     position: relative;
   }
@@ -146,6 +146,7 @@ button {
     border-radius: 50%;
   }
 }
+
 .dropdown_menu {
   display: none;
   background-color: #21232E;
@@ -153,9 +154,11 @@ button {
   padding-top: 10px;
   transition: linear .3s;
 }
+
 .hide {
   opacity: 0 !important;
 }
+
 .dropdown_menu-inner {
   display: flex;
 
@@ -163,9 +166,10 @@ button {
     font-size: 18px;
     line-height: 24px;
     transition: all .1s;
-      &:hover {
-        color: $green;
-      }
+
+    &:hover {
+      color: $green;
+    }
   }
 }
 
@@ -178,7 +182,6 @@ button {
   margin-right: 30px;
   max-height: 500px;
 }
-
 
 
 .dropdown_list {
@@ -219,9 +222,15 @@ button {
   }
 }
 
-.slider_inner {
+.slider {
+  max-width: 2000px;
   margin: 0 auto;
+}
+
+.slider_inner {
+  //margin: 0 auto;
   position: relative;
+
   .slider_arrows {
     position: absolute;
     padding: 18px;
@@ -230,21 +239,83 @@ button {
     top: 42%;
     z-index: 4;
     cursor: pointer;
+    transition: all .2s;
+    &:hover {
+      background-color: rgba( $green, 0.5 );
+    }
   }
+
   .slider_arrows-left {
     transform: rotate(180deg);
     left: 3%;
   }
+
   .slider_arrows-right {
     right: 3%;
   }
 
 }
+
 .slider_item {
-  height: 560px;
-  background-position: center;
+  margin: 0 auto;
+  width: 1920px;
+  height: 70vh;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 5%;
+  left: 0;
+  right: 0;
+  max-width: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .slick-active button {
+    background-color: #fff;
+  }
+
+  li button {
+    font-size: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #9EA1A7;
+  }
+}
+
+.slider_btn {
+  position: absolute;
+  font-family: "MyriadProSemiBold";
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 22px;
+  width: 180px;
+  height: 50px;
+  background-color: $green;
+  border-radius: 25px;
+  padding: 15px 25px;
+
+  svg {
+    position: absolute;
+    top: 12px;
+    right: 35px;
+  }
+}
+.slider_item-1-btn,
+.slider_item-3-btn{
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 10%;
+}
+.slider_item-2-btn {
+  left: 27.3%;
+  bottom: 34%;
 }
 
 @import "media";
