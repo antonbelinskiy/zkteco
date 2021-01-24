@@ -12,19 +12,9 @@ body {
   background-color: #21232E;
   min-height: 80px;
 
-
   .header_inner {
     display: flex;
     align-items: center;
-
-    .header_logo {
-      margin-right: 121px;
-      height: 44px;
-      width: 185px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
 
     .menu_btn {
       margin-right: 55px;
@@ -34,6 +24,16 @@ body {
       margin-right: 61px;
     }
   }
+}
+
+.header_logo,
+.footer_logo {
+  margin-right: 121px;
+  height: 44px;
+  width: 185px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .header_nav {
@@ -164,10 +164,6 @@ button {
   transition: linear .3s;
 }
 
-.hide {
-  opacity: 0 !important;
-}
-
 .dropdown_menu-inner {
   display: flex;
 
@@ -295,6 +291,7 @@ button {
     height: 10px;
     border-radius: 50%;
     background-color: #9EA1A7;
+    cursor: pointer;
   }
 }
 
@@ -310,10 +307,14 @@ button {
   border-radius: 25px;
   padding: 15px 25px;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   svg {
     position: absolute;
-    top: 12px;
-    right: 35px;
+    top: 13px;
+    right: 32px;
   }
 }
 
@@ -383,6 +384,7 @@ button {
 .popular_products-list {
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 
   .popular_products-item {
     font-family: "MyriadProBold";
@@ -412,23 +414,297 @@ button {
       font-size: 32px;
       line-height: 32px;
     }
+
     .popular_item-best {
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
+
       img {
         margin-right: 10px;
       }
     }
+
     .popular_item-link {
       color: $green;
     }
+
     .popular_item-icon_like {
       position: absolute;
       top: 7px;
       left: 70px;
     }
+  }
+}
+
+.popular_products-button {
+  position: relative;
+  display: block;
+  margin: 0 auto 60px auto;
+  font-weight: 600;
+  color: #21232E;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 18px;
+  max-width: 230px;
+  height: 50px;
+  border: 1px solid $green;
+  border-radius: 25px;
+  padding: 15px 50px 15px 15px;
+
+  &:hover {
+    color: #000;
+  }
+
+  svg {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+  }
+}
+
+.discount_items {
+  margin-bottom: 60px;
+}
+
+.discount_items-inner {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+
+  .discount_item {
+    position: relative;
+    display: flex;
+    width: 48%;
+  }
+
+  .discount_item:first-child {
+    background-color: #E5E6E7;
+
+    &::before {
+      content: '-5%';
+      position: absolute;
+      padding-top: 12px;
+      font-size: 24px;
+      line-height: 28px;
+      text-align: center;
+      font-family: "MyriadProBold";
+      width: 64px;
+      height: 43px;
+      background-color: $green;
+      color: #fff;
+      left: 40px;
+    }
+  }
+
+  .discount_item:last-child {
+    border: 2px solid $green;
+
+    &::before {
+      content: 'Черная пятница!';
+      position: absolute;
+      padding: 10px 0 15px 15px;
+      font-size: 14px;
+      line-height: 18px;
+      font-family: "MyriadProBold";
+      width: 70px;
+      height: 32px;
+      background-color: #21232E;
+      color: #fff;
+      left: 40px;
+      top: -2px;
+    }
+  }
+
+  .discount_item-text {
+    padding: 60px 20px 40px 40px;
+    max-width: 60%;
+    color: #5F626B;
+  }
+
+  .discount_item-title {
+    font-family: "MyriadProBold";
+    font-size: 44px;
+    line-height: 44px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .discount_item-description {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 40px;
+  }
+
+  .discount_item-link {
+    color: #21232E;
+    background-color: #fff;
+    padding: 15px 30px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid $green;
+    border-radius: 25px;
+    transition: all .2s;
+
+    &:hover {
+      border-color: #000;
+    }
+  }
+
+  .discount_item-link_green {
+    color: #fff;
+    background-color: $green;
+  }
+
+  .discount_item-price {
+    font-family: "MyriadProBold";
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 40px;
+  }
+}
+
+.info {
+  padding: 60px;
+  text-align: center;
+  background-color: #F3F4F2;
+  color: #9EA1A7;
+
+  &_title {
+    font-family: "MyriadProBold";
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  &_text {
+    margin: 0 auto;
+    max-width: 900px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  &_text:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+.footer {
+  background-color: #333640;
+  color: #E5E6E7;
+  font-size: 18px;
+  padding-top: 60px;
+}
+
+.footer_top {
+  display: flex;
+  padding-bottom: 30px;
+  ;
+}
+
+.footer_logo {
+  display: block;
+  margin-bottom: 30px;
+}
+
+.footer_info {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  max-width: 200px;
+  margin-right: 150px;
+
+  &-location {
+    margin-bottom: 10px;
+  }
+
+  .footer_info-tel {
+    color: #E5E6E7;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: all .2s;
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
+.footer_info-schedule {
+  margin-bottom: 10px;
+}
+
+.footer_info-social {
+  a {
+    margin-right: 10px;
+  }
+}
+
+.footer_info-row {
+  max-width: 215px;
+  margin-right: 150px;
+}
+
+.footer_row-item {
+  margin-bottom: 20px;
+}
+
+.footer_row-link {
+  font-size: 18px;
+  line-height: 24px;
+  transition: all .2s;
+
+  &:hover {
+    color: $green;
+  }
+}
+
+.footer_bottom {
+  font-size: 14px;
+  line-height: 18px;
+
+  span {
+    color: #9EA1A7;
+    // margin-right: 60px;
+  }
+}
+
+.footer_bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  
+}
+.footer_input {
+  position: relative;
+  align-self: flex-end;
+  &::after {
+    content: url(../img/input.svg);
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+}
+.footer_form {
+  color: #fff;
+  background-color: #5F626B;
+  border: none;
+  padding: 10px 50px 20px 15px;
+  margin: 0;
+  width: 320px;
+  height: 50px;
+  
+  border-top-right-radius: 35px;
+  border-top-left-radius: 5px;
+  &::placeholder {
+    color: #fff;
   }
 }
 
