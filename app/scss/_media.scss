@@ -67,18 +67,21 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    margin: 0 auto;
     width: 90vw;
   }
   .product_list-item {
     border: none;
     min-width: 100%;
     text-align: center;
+    border: 1px solid #E5E6E7;
+    border-bottom: none;
   }
   .product_list-item:not(:last-child) {
-    border-right: none;
+    // border-right: none;
   }
   .product_list-item:first-child {
-    border-left: none;
+    border-left: 1px solid #E5E6E7;
   }
 }
 .footer_info-row {
