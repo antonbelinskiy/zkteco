@@ -71,7 +71,8 @@
   }
   .product_list-item {
     border: none;
-    min-width: 50%;
+    min-width: 100%;
+    text-align: center;
   }
   .product_list-item:not(:last-child) {
     border-right: none;
@@ -79,4 +80,11 @@
   .product_list-item:first-child {
     border-left: none;
   }
+}
+.footer_info-row {
+  max-width: 300px;
+  margin-right: 110px;
+}
+.footer_row-link {
+  font-size: 17px;
 }
