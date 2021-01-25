@@ -10,11 +10,12 @@ body {
 
 .header {
   background-color: #21232E;
-  min-height: 80px;
+  // min-height: 80px;
 
   .header_inner {
     display: flex;
     align-items: center;
+    height: 100%;
 
     .menu_btn {
       margin-right: 55px;
@@ -58,16 +59,20 @@ body {
   }
 }
 
-.header_form-search form {
+.header_form-search form,
+.dropdown_form-search form {
   position: relative;
   width: 188px;
   height: 80px;
   background-color: #333640;
   margin-right: 30px;
 }
+.dropdown_form-search {
+  display: none;
+}
 
-
-.header_form-search input {
+.header_form-search input,
+.dropdown_form-search input {
   font-size: 20px;
   overflow: hidden;
   color: #9EA1A7;
@@ -130,17 +135,30 @@ button {
 .header_tools {
   display: flex;
 
+  .header_tools-account {
+    display: none;
+  }
+
   &-weight {
     margin-right: 30px;
   }
 }
 
-.header_tools>* {
-  & {
+.hello {
+  display: none;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.header_tools {
+
+  .header_tools-weight,
+  .header_tools-cart {
     position: relative;
   }
 
-  &::after {
+  .header_tools-weight::after,
+  .header_tools-cart::after {
     content: '5';
     position: absolute;
     top: -10px;
@@ -188,7 +206,11 @@ button {
   max-height: 500px;
 }
 
-
+.dropdown_added-hidden_list,
+.dropdown_added-tel, 
+.dropdown_hidden-menu {
+  display: none;
+}
 .dropdown_list {
   li:not(:first-child) {
     margin-bottom: 10px;
@@ -333,6 +355,19 @@ button {
 
 .product_list-inner {
   display: flex;
+  position: relative;
+  overflow: hidden;
+  .slick-dots {
+    position: absolute;
+    bottom: -20px;
+    max-width: 80px;
+    li button{
+      background-color: #9EA1A7;;
+    }
+    .slick-active button {
+      background-color: #21232E;;
+    }
+  }
 }
 
 
@@ -340,6 +375,11 @@ button {
   padding: 30px 30px;
   margin-top: -4px;
   max-width: 16.666%;
+  .product_item-title {
+    &:hover {
+      color: $green;
+    }
+  }
 }
 
 .product_list-item:not(:last-child) {
@@ -389,7 +429,7 @@ button {
   .popular_products-item {
     font-family: "MyriadProBold";
     text-align: center;
-    max-width: 350px;
+    max-width: 33.333%;
     padding: 30px;
     border: 1px solid #E5E6E7;
 
@@ -432,12 +472,17 @@ button {
 
     .popular_item-icon_like {
       position: absolute;
-      top: 7px;
-      left: 70px;
+      top: 15%;
+      left: 33%;
     }
   }
 }
-
+.popular_item-img {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .popular_products-button {
   position: relative;
   display: block;
@@ -635,8 +680,16 @@ button {
   }
 }
 
+.footer_info-media {
+  display: none;
+}
+
 .footer_info-schedule {
   margin-bottom: 10px;
+}
+
+.footer_info-email {
+  display: none;
 }
 
 .footer_info-social {
@@ -679,11 +732,22 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 60px;
-  
 }
+
+.footer_bottom-left,
+.footer_bottom-right {
+  flex-wrap: wrap;
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer_input {
   position: relative;
   align-self: flex-end;
+
   &::after {
     content: url(../img/input.svg);
     position: absolute;
@@ -692,6 +756,7 @@ button {
   }
 
 }
+
 .footer_form {
   color: #fff;
   background-color: #5F626B;
@@ -700,9 +765,10 @@ button {
   margin: 0;
   width: 320px;
   height: 50px;
-  
+
   border-top-right-radius: 35px;
   border-top-left-radius: 5px;
+
   &::placeholder {
     color: #fff;
   }
