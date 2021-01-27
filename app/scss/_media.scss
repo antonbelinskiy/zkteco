@@ -592,82 +592,92 @@
     padding: 0 15px;
   }
 }
+@media screen and (max-width: 420px) {
+  .container {
+    width: 380px;
+  }
+  .discount_items-inner img {
+    height: 40%;
+}
+.container {
+  width: 300px;
+  padding: 0 10px;
+}
 
+.header .header_inner .header_logo {
+  height: 28px;
+  width: 150px;
+}
+
+.header_inner .header_tools {
+  margin-left: 10px;
+}
+
+.footer_row-link {
+  font-size: 14px;
+}
+
+.discount_items .container {
+  width: 320px;
+  padding: 0;
+}
+
+.discount_items-inner .discount_item {
+  height: 200px;
+}
+
+.discount_items-inner .discount_item-text {
+  padding: 40px 10px 5px 10px;
+  max-width: 80%;
+}
+
+.discount_items-inner .discount_item:first-child::before,
+.discount_items-inner .discount_item:last-child::before {
+  left: 10px;
+  width: 40px;
+  height: 30px;
+  font-size: 10px;
+  padding: 10px;
+}
+
+.discount_items-inner .discount_item:first-child::before {
+  font-size: 16px;
+  padding: 5px;
+}
+
+.discount_items-inner .discount_item-price {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.discount_items-inner .discount_item-title {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.discount_items-inner .discount_item-link {
+  font-size: 10px;
+  padding: 5px 10px;
+}
+
+.discount_items-inner .discount_item-description {
+  font-size: 8px;
+  margin-bottom: 3px;
+}
+
+.popular_products-list .popular_products-item .popular_item-icon_like {
+  top: 15%;
+  left: 15.5%;
+}
+
+.footer_bottom .container {
+  width: 320px;
+  padding: 0;
+}
+}
 @media screen and (max-width: 320px) {
   .container {
     width: 300px;
     padding: 0 10px;
   }
-
-  .header .header_inner .header_logo {
-    height: 28px;
-    width: 150px;
-  }
-
-  .header_inner .header_tools {
-    margin-left: 10px;
-  }
-
-  .footer_row-link {
-    font-size: 14px;
-  }
-
-  .discount_items .container {
-    width: 320px;
-    padding: 0;
-  }
-
-  .discount_items-inner .discount_item {
-    height: 200px;
-  }
-
-  .discount_items-inner .discount_item-text {
-    padding: 40px 10px 5px 10px;
-    max-width: 80%;
-  }
-
-  .discount_items-inner .discount_item:first-child::before,
-  .discount_items-inner .discount_item:last-child::before {
-    left: 10px;
-    width: 40px;
-    height: 30px;
-    font-size: 10px;
-    padding: 10px;
-  }
-
-  .discount_items-inner .discount_item:first-child::before {
-    font-size: 16px;
-    padding: 5px;
-  }
-
-  .discount_items-inner .discount_item-price {
-    font-size: 14px;
-    margin-bottom: 0;
-  }
-
-  .discount_items-inner .discount_item-title {
-    font-size: 20px;
-    margin-bottom: 0;
-  }
-
-  .discount_items-inner .discount_item-link {
-    font-size: 10px;
-    padding: 5px 10px;
-  }
-
-  .discount_items-inner .discount_item-description {
-    font-size: 8px;
-    margin-bottom: 3px;
-  }
-
-  .popular_products-list .popular_products-item .popular_item-icon_like {
-    top: 15%;
-    left: 15.5%;
-  }
-
-  .footer_bottom .container {
-    width: 320px;
-    padding: 0;
-  }
-
 }
