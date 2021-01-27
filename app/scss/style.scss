@@ -10,11 +10,11 @@ body {
 
 .header {
   background-color: #21232E;
-  // min-height: 80px;
 
   .header_inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 
     .menu_btn {
@@ -140,7 +140,7 @@ button {
   }
 
   &-weight {
-    margin-right: 30px;
+    margin-right: 25px;
   }
 }
 
@@ -354,12 +354,11 @@ button {
 }
 
 .product_list-inner {
-  display: flex;
-  position: relative;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   .slick-dots {
     position: absolute;
-    bottom: -20px;
+    bottom: 10px;
     max-width: 80px;
     li button{
       background-color: #9EA1A7;;
@@ -374,7 +373,7 @@ button {
 .product_list-item {
   padding: 30px 30px;
   margin-top: -4px;
-  max-width: 16.666%;
+  text-align: center;
   .product_item-title {
     &:hover {
       color: $green;
@@ -423,7 +422,6 @@ button {
 
 .popular_products-list {
   display: flex;
-  justify-content: center;
   margin-bottom: 30px;
 
   .popular_products-item {
@@ -522,6 +520,14 @@ button {
     position: relative;
     display: flex;
     width: 48%;
+    overflow: hidden;
+    &-img {
+      display: flex;
+      text-align: center;
+      img {
+        height: 70%;
+      }
+    }
   }
 
   .discount_item:first-child {
@@ -697,10 +703,12 @@ button {
     margin-right: 10px;
   }
 }
-
-.footer_info-row {
-  max-width: 215px;
-  margin-right: 150px;
+.footer_info-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.footer_row {
+  margin-left: 20px;
 }
 
 .footer_row-item {
@@ -723,7 +731,6 @@ button {
 
   span {
     color: #9EA1A7;
-    // margin-right: 60px;
   }
 }
 
@@ -731,7 +738,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  min-height: 60px;
 }
 
 .footer_bottom-left,
@@ -743,7 +750,9 @@ button {
   justify-content: space-between;
   align-items: center;
 }
-
+.footer_bottom-right {
+  align-self: flex-end;
+}
 .footer_input {
   position: relative;
   align-self: flex-end;
