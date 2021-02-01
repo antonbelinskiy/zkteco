@@ -626,15 +626,20 @@
 
 @media screen and (max-width: 480px) {
   .container {
+    width: 450px;
     padding: 0 15px;
   }
   .slider_item {
-    height: 60vh;
+    height: 70vh;
   }
   .popular_products-button {
     font-size: 12px;
     width: 200px;
   }
+  .popular_products-list .popular_products-item .popular_item-icon_like {
+    top: 15%;
+    left: 29%;
+}
 }
 @media screen and (max-width: 420px) {
   .container {
@@ -642,7 +647,7 @@
     padding: 0 15px;
   }
   .slider_item {
-    height: 50vh;
+    height: 70vh;
   }
   .slider_btn {
     width: 120px;
@@ -730,6 +735,11 @@
   width: 320px;
   padding: 0;
 }
+}
+@media screen and (max-width: 400px) {
+  .slider_item {
+    height: 60vh;
+  }
 }
 @media screen and (max-width: 320px) {
   .container {
