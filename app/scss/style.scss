@@ -10,11 +10,11 @@ body {
 
 .header {
   background-color: #21232E;
-  // min-height: 80px;
 
   .header_inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 100%;
 
     .menu_btn {
@@ -67,6 +67,7 @@ body {
   background-color: #333640;
   margin-right: 30px;
 }
+
 .dropdown_form-search {
   display: none;
 }
@@ -140,7 +141,7 @@ button {
   }
 
   &-weight {
-    margin-right: 30px;
+    margin-right: 25px;
   }
 }
 
@@ -207,10 +208,11 @@ button {
 }
 
 .dropdown_added-hidden_list,
-.dropdown_added-tel, 
+.dropdown_added-tel,
 .dropdown_hidden-menu {
   display: none;
 }
+
 .dropdown_list {
   li:not(:first-child) {
     margin-bottom: 10px;
@@ -249,13 +251,24 @@ button {
   }
 }
 
+.phone_intro {
+  display: none;
+
+  &-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 .slider {
   max-width: 2000px;
   margin: 0 auto;
 }
 
 .slider_inner {
-  //margin: 0 auto;
   position: relative;
 
   .slider_arrows {
@@ -286,11 +299,21 @@ button {
 
 .slider_item {
   margin: 0 auto;
-  width: 1920px;
   height: 40vw;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  img {
+    height: 100%;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+  }
+  .dekstop_slider {
+    display: block;
+  }
+  .media_slider {
+    display: none;
+  }
 }
 
 .slick-dots {
@@ -354,18 +377,22 @@ button {
 }
 
 .product_list-inner {
-  display: flex;
-  position: relative;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
   .slick-dots {
     position: absolute;
-    bottom: -20px;
+    bottom: -25px;
     max-width: 80px;
-    li button{
-      background-color: #9EA1A7;;
+
+    li button {
+      background-color: #9EA1A7;
+      ;
     }
+
     .slick-active button {
-      background-color: #21232E;;
+      background-color: #21232E;
+      ;
     }
   }
 }
@@ -374,7 +401,8 @@ button {
 .product_list-item {
   padding: 30px 30px;
   margin-top: -4px;
-  max-width: 16.666%;
+  text-align: center;
+
   .product_item-title {
     &:hover {
       color: $green;
@@ -392,6 +420,10 @@ button {
 
 .product_item-img {
   margin-bottom: 10px;
+}
+
+.product_list-inner .slick-dots {
+  z-index: 10;
 }
 
 .product_item-title {
@@ -423,7 +455,6 @@ button {
 
 .popular_products-list {
   display: flex;
-  justify-content: center;
   margin-bottom: 30px;
 
   .popular_products-item {
@@ -473,16 +504,18 @@ button {
     .popular_item-icon_like {
       position: absolute;
       top: 15%;
-      left: 33%;
+      left: 32.8%;
     }
   }
 }
+
 .popular_item-img {
   img {
     width: 100%;
     height: 100%;
   }
 }
+
 .popular_products-button {
   position: relative;
   display: block;
@@ -522,6 +555,16 @@ button {
     position: relative;
     display: flex;
     width: 48%;
+    overflow: hidden;
+
+    &-img {
+      display: flex;
+      text-align: center;
+
+      img {
+        height: 70%;
+      }
+    }
   }
 
   .discount_item:first-child {
@@ -698,9 +741,13 @@ button {
   }
 }
 
-.footer_info-row {
-  max-width: 215px;
-  margin-right: 150px;
+.footer_info-rows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.footer_row {
+  margin-left: 20px;
 }
 
 .footer_row-item {
@@ -723,7 +770,6 @@ button {
 
   span {
     color: #9EA1A7;
-    // margin-right: 60px;
   }
 }
 
@@ -731,7 +777,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 60px;
+  min-height: 60px;
 }
 
 .footer_bottom-left,
@@ -742,6 +788,10 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.footer_bottom-right {
+  align-self: flex-end;
 }
 
 .footer_input {
