@@ -7,6 +7,7 @@ let gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del');
     autoPrefixer = require('gulp-autoprefixer');
+    imagemin = require('gulp-imagemin');
     
 
 
@@ -29,6 +30,23 @@ gulp.task('css', function(){
     .pipe(concat('_libs.scss'))
     .pipe(gulp.dest('app/scss'))
     .pipe(browserSync.reload({stream:true}))
+});
+gulp.task('images', function(){
+    return gulp.src('app/img/*.{jpg,svg,png,ico,webp,gif}')
+    .pipe(imagemin([
+        imagemin.gifsicle({interlaced: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.optipng({optimizationLevel: 5}),
+        imagemin.svgo({
+            plugins: [
+                {removeViewBox: true},
+                {cleanupIDs: false}
+            ]
+        })
+    ]))
+    .pipe(gulp.dest('app/img/'))
+    .pipe(browserSync.reload({stream:true}))
+
 });
 gulp.task('icons', function() {
     return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
@@ -91,4 +109,4 @@ gulp.task('browser-sync', function() {
 });
 
 
-gulp.task('default', gulp.parallel('css', 'scss', 'js', 'browser-sync', 'watch'))
+gulp.task('default', gulp.parallel('css', 'scss', 'images', 'js', 'browser-sync', 'watch'))
