@@ -10,6 +10,9 @@ body {
 
 .header {
   background-color: #21232E;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 
   .header_inner {
     display: flex;
@@ -19,10 +22,12 @@ body {
 
     .menu_btn {
       margin-right: 55px;
+      cursor: pointer;
     }
 
     #close_btn {
       margin-right: 61px;
+      cursor: pointer;
     }
   }
 }
@@ -174,13 +179,19 @@ button {
     border-radius: 50%;
   }
 }
-
 .dropdown_menu {
-  display: none;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  
+  transition: linear .3s;
+}
+.dropdown_menu.active {
   background-color: #21232E;
   padding-bottom: 60px;
   padding-top: 10px;
-  transition: linear .3s;
+  z-index: 1000;
+  height: 300px
 }
 
 .dropdown_menu-inner {
@@ -303,14 +314,17 @@ button {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+
   img {
     height: 100%;
     margin-left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
   }
+
   .dekstop_slider {
     display: block;
   }
+
   .media_slider {
     display: none;
   }
@@ -340,7 +354,8 @@ button {
   }
 }
 
-.slider_btn {
+.slider_btn,
+.modal_btn {
   position: absolute;
   font-family: "MyriadProSemiBold";
   text-transform: uppercase;
@@ -358,8 +373,18 @@ button {
 
   svg {
     position: absolute;
-    top: 13px;
+    bottom: 27%;
     right: 32px;
+  }
+}
+
+.modal_btn {
+  position: relative;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  svg {
+    bottom: 26%;
   }
 }
 
@@ -423,7 +448,7 @@ button {
 }
 
 .product_list-inner .slick-dots {
-  z-index: 10;
+  z-index: 8;
 }
 
 .product_item-title {
@@ -824,4 +849,91 @@ button {
   }
 }
 
+.callback_popup {
+  display: none;
+  transition: .5s all;
+  &-close {
+    position: absolute;
+    right: 35px;
+    width: 20px;
+    height: 20px;
+  }
+  &-close::before,
+  &-close::after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    height: 33px;
+    width: 2px;
+    background-color: #E5E6E7;
+    }
+  &-close::before {
+  transform: rotate(45deg);
+  }
+  &-close::after {
+  transform: rotate(-45deg);
+  }
+  
+  &-form {
+    padding: 40px;
+    color: #21232E;
+    input {
+      height: 50px;
+      border: 1px solid #E5E6E7;
+      border-radius: 2px;
+      width: 60%;
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-title {
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  &-text {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 20px;
+  }
+
+  .callback_input-desc {
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+}
+
+.callback_popup.active {
+  display: block;
+}
+
+.callback_popup-hide {
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 9999;
+}
+
+.callback_popup-inner {
+  position: fixed;
+  top: 20%;
+  left: 0%;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  width: 550px;
+  height: 440px;
+  background: #fff;
+  border-radius: 4px;
+  z-index: 99999;
+  opacity: 1;
+}
+
+//popups 
 @import "media";

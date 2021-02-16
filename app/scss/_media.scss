@@ -13,6 +13,9 @@
       right: 11%;
     }
   }
+  .slider_btn svg{
+    bottom: 26%;
+  }
 
   .popular_products-list .popular_products-item .popular_item-icon_like {
     left: 33.8%;
@@ -29,7 +32,9 @@
     width: 180px;
     margin-right: 31px;
   }
-
+  .slider_btn svg{
+    bottom: 28%;
+  }
   .header_nav {
     menu {
       margin-right: 20px;
@@ -107,7 +112,6 @@
     font-size: 16px;
     line-height: 24px;
   }
-
   .product_list-item {
     max-width: 16.666%;
   }
@@ -154,7 +158,9 @@
   .header_contacts .tel {
     font-size: 18px;
   }
-
+  .slider_btn svg {
+    bottom: 26%; 
+  }
   .dropdown_menu a {
     font-size: 16px;
     line-height: 24px;
@@ -344,7 +350,10 @@
   .container {
     width: 870px;
   }
-
+  .dropdown_menu.active {
+    overflow: scroll;
+    height: 80vh;
+  }
   .popular_products-list .popular_products-item .popular_item-icon_like {
     left: 16%;
   }
@@ -412,12 +421,15 @@
   }
 
   .header {
-    min-height: 60px;
+    min-height: 80px;
     display: flex;
+    flex-direction: column;
   }
-
+  .header .header_inner {
+    height: 80px;
+  }
   .header .header_inner .header_logo {
-    height: 36px;
+    height: 38px;
     width: 160px;
     margin: 0 auto;
   }
